@@ -1,13 +1,17 @@
 import java.util.StringTokenizer;
 class Solution {
     public int lengthOfLastWord(String s) {
-        StringTokenizer st = new StringTokenizer(s," ");
-        Stack<String> stack=new Stack<>();
-        while(st.hasMoreTokens())
+        int i=s.length()-1;
+        int len=0;
+        while(i>=0 && s.charAt(i)==' ')
         {
-            stack.push(st.nextToken());
+            i--;
+        } 
+        while(i>=0 && s.charAt(i)!=' ')
+        {
+            len++;
+            i--;
         }
-        int len=stack.pop().length();
         return len;
     }
 }
