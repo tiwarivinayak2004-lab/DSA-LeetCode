@@ -17,6 +17,31 @@ class Solution {
     public int countNodes(TreeNode root) {
         if(root==null) return 0;
 
+        int left=leftsubtreeHeight(root);
+        int right=rightsubtreeHeight(root);
+
+        if(left==right) return (1<<left)-1;
+
         return 1+countNodes(root.left)+countNodes(root.right);
+    }
+    public int leftsubtreeHeight(TreeNode node)
+    {
+        int height=0;
+        while(node!=null)
+        {
+            height++;
+            node=node.left;
+        }
+        return height;
+    }
+    public int rightsubtreeHeight(TreeNode node)
+    {
+        int height=0;
+        while(node!=null)
+        {
+            height++;
+            node=node.right;
+        }
+        return height;
     }
 }
