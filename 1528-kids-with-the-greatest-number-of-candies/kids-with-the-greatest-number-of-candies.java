@@ -7,11 +7,7 @@ class Solution {
         }
 
         for(int i=0;i<candies.length;i++){
-            if((candies[i]+extraCandies)>=max){
-                res.add(true);
-            }else{
-                res.add(false);
-            }
+            res.add((candies[i]+extraCandies)>=max);
         }
         return res;
 
