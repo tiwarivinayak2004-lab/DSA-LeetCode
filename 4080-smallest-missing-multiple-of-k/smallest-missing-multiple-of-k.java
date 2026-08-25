@@ -5,10 +5,16 @@ class Solution {
         for(int num:nums){
             set.add(num);
         }
-        int res=k;
-        while(set.contains(res)){
-            res=res+k;
+        int res=0;
+        for(int i=1;i<=nums.length;i++){
+            res=k*i;
+            if(set.contains(res)){
+                continue;
+            }
+            else{
+                return res;
+            }
         }
-        return res;
+        return res+k;
     }
 }
