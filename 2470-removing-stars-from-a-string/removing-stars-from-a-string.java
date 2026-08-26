@@ -8,19 +8,15 @@ class Solution {
             char ch=s.charAt(i);
             if(ch=='*'){
                 st.pop();
-                continue;
-            }
-            st.push(ch);
-        }
-        String res="";
-        if(!st.isEmpty()){
-            while(!st.isEmpty()){
-                char str=st.pop();
-                res=str+res;
+            }else{
+                st.push(ch);
             }
         }
-        else return "";
+        StringBuilder res=new StringBuilder();
+        while(!st.isEmpty()){
+            res.append(st.pop());
+        }
 
-        return res;
+        return res.reverse().toString();
     }
 }
