@@ -5,13 +5,6 @@ class Solution {
         if(s.charAt(0)=='0') return 0;
         dp[0]=1;
         if(n==1) return 1;
-        // if(s.charAt(1)!='0'){
-        //     dp[1]=dp[0];
-        // }
-        // int num=Integer.parseInt(s.substring(0,2));
-        // if(num>=10 && num<=26){
-        //     dp[1]+=1;
-        // }
         for(int i=1;i<=n;i++){
             if(s.charAt(i-1)!='0'){
                 dp[i]=dp[i]+dp[i-1];
