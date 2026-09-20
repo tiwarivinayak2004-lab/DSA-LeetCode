@@ -11,8 +11,7 @@ class Solution {
             else
             {
                 if(st.isEmpty()) return false;
-                char ch=st.peek();
-                st.pop();
+                char ch=st.pop();
                 if(ch=='(' && ch1!=')' || ch=='{' && ch1!='}' || ch=='[' && ch1!=']')
                 {
                     return false;
