@@ -15,45 +15,18 @@
  */
 class Solution {
     public boolean findTarget(TreeNode root, int k) {
+       HashSet<Integer> set=new HashSet<>();
+       return find(root,k,set);
+    }
+    private boolean find(TreeNode root,int k,HashSet<Integer> set){
         if(root==null) return false;
-        BSTIterator l=new BSTIterator(root,false);
-        BSTIterator r=new BSTIterator(root,true);
 
-        int i=l.next();
-        int j=r.next();
-        while(i<j){
-            if(i+j==k) return true;
-            else if(i+j<k) i=l.next();
-            else j=r.next();
+        int needed=k-root.val;
+        if(set.contains(needed)){
+            return true;
         }
-        return false;
+        set.add(root.val);
+
+        return find(root.left,k,set) || find(root.right,k,set);
     }
-}
-public class BSTIterator{
-    private Stack<TreeNode> st=new Stack<>();
-    boolean reverse=true;
-    public BSTIterator(TreeNode root,boolean isReverse)
-    {
-        reverse=isReverse;
-        pushall(root);
-    }
-    public boolean hasNext(){
-        return !st.isEmpty();
-    }
-    public int next(){
-        TreeNode tmpNode=st.pop();
-        if(reverse==false) pushall(tmpNode.right);
-        else pushall(tmpNode.left);
-        return tmpNode.val;
-    }
-    public void pushall(TreeNode root)
-    {
-        while(root!=null)
-        {
-            st.push(root);
-            if(reverse==true) root=root.right;
-            else root=root.left;
-        }
-    }
-    
 }
