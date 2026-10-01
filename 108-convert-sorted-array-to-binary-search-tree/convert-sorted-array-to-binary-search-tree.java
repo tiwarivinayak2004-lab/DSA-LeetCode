@@ -20,7 +20,7 @@ class Solution {
     public TreeNode build(int[] nums,int left,int right){
         if(left>right) return null;
 
-        int mid=left+(right-left)/2;
+        int mid=(right+left)/2;
         TreeNode node=new TreeNode(nums[mid]);
 
         node.left=build(nums,left,mid-1);
