@@ -7,13 +7,12 @@ class Solution {
                 opencnt+=1;
             }else{
                 if(opencnt>0){
-                    // unmatched-=1;
                     opencnt-=1;
                 }else{
                     unmatched+=1;
                 }
             }
         }
-        return Math.abs(opencnt+unmatched);
+        return opencnt+unmatched;
     }
 }
