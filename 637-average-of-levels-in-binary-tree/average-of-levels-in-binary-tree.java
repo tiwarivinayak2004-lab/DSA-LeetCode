@@ -21,10 +21,10 @@ class Solution {
         que.offer(root);
         while(!que.isEmpty()){
             double size=que.size();
-            double sum=0;
+            double avg=0;
             for(int i=1;i<=size;i++){
                 TreeNode curr=que.poll();
-                sum+=curr.val;
+                avg+=curr.val;
                 if(curr.left!=null){
                     que.offer(curr.left);
                 }
@@ -32,7 +32,7 @@ class Solution {
                     que.offer(curr.right);
                 }
             }
-            double avg=sum/size;
+            avg=avg/size;
             ans.add(avg);
         }
         return ans;
