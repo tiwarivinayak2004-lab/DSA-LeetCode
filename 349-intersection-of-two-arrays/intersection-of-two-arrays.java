@@ -5,9 +5,6 @@ class Solution {
         int len2=nums2.length;
         ArrayList<Integer> res=new ArrayList<>();
         for(int i=0;i<len1;i++){
-            if(set.contains(nums1[i])){
-                continue;
-            }
             set.add(nums1[i]);
         }
         int k=0;
