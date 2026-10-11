@@ -6,9 +6,6 @@ class Solution {
         }
         for(char ch: ransomNote.toCharArray()){
             freq[ch-'0']--;
-            if(freq[ch]<0){
-                return false;
-            }
         }
         for(int i:freq){
             if(i<0){
