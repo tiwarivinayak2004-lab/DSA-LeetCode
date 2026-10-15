@@ -8,8 +8,7 @@ class Solution {
             for(int j=i;j<len;j++){
                 set.add(nums.get(j));
                 int setsize=set.size();
-                sq=setsize*setsize;
-                sum+=sq;
+                sum+=setsize*setsize;
             }
         }
         return sum;
