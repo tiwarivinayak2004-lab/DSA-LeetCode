@@ -4,16 +4,16 @@ class Solution {
         int n=nums.length;
         while(r<n){
             sum+=nums[r];
-            while(sum>=target) {
+            while(sum>=target){
                 minlen=Math.min(minlen,r-l+1);
                 sum-=nums[l];
-                l++;
+                l+=1;
             }
             r+=1;
         }
         if(minlen==Integer.MAX_VALUE){
             return 0;
         }
-        else return minlen;
+        return minlen;
     }
 }
