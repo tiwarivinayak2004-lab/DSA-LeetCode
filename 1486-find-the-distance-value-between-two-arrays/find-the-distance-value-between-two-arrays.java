@@ -7,6 +7,7 @@ class Solution {
                 int diff=Math.abs(arr1[i]-arr2[j]);
                 if(diff<=d){
                     flag=false;
+                    break;
                 }
             }
             if(flag){
