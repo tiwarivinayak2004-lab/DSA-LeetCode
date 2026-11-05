@@ -4,8 +4,7 @@ class Solution {
         for(int i=0;i<arr1.length;i++){
             boolean flag=true;
             for(int j=0;j<arr2.length;j++){
-                int diff=Math.abs(arr1[i]-arr2[j]);
-                if(diff<=d){
+                if((Math.abs(arr1[i]-arr2[j]))<=d){
                     flag=false;
                     break;
                 }
